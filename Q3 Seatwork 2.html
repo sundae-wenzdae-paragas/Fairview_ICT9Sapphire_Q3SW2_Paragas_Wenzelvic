@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q3 Seatwork 2.html</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font for everything -->
+    <link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <style>
+       body{
+        font-family: Zalando Sans, sans-serif;
+       }
+    </style>
+
+</head>
+<body>
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-dark border-bottom border-5 border-primary" style="border-color: #6109ed !important;">
+  <div class="container-fluid" id="navbaRR">
+
+    <a class="navbar-brand col-sm-3" href="#"><img src="Header.webp" style="width: 100%; height: auto;"></a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+
+    <style>
+        /* Internal CSS for custom styling */
+        body {
+            background-color: #0b0e14; /* Dark theme like the sample */
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container-box {
+            background: rgba(0, 255, 255, 0.1);
+            border: 2px solid #00fbff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        .store-logo {
+            max-width: 150px;
+            margin: 10px;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h1 class="mt-5">Product Searcher</h1>
+        
+        <div class="container-box mx-auto col-md-8">
+            <h3>Looking for some bags?</h3>
+
+    <details ontoggle="message1()">
+        <summary>
+            <u>instructions</u>
+            <br>
+            <i id="message"></i>
+        </summary>
+    </details>
+    <br>
+    <script>
+            function message1(){
+            document.getElementById('message').innerHTML = "Input your budget below and we can find just the right one for you!";}
+            </script>
+  
+            
+            <div class="input-group mb-3">
+                <input type="number" id="budgetInput" class="form-control" placeholder="Input budget here... (e.g. 45000)">
+                <button class="btn btn-info" onclick="findProduct()">Search</button>
+            </div>
+
+            <hr>
+
+            <div id="resultArea" class="mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Recommended Brands:</h5>
+                        <p id="brandOutput">-</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Store Location:</h5>
+                        <p id="locationOutput">-</p>
+                        <div id="logoArea"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="mt-4">Data sourced from: <a href="https://www.w3schools.com" target="_blank" class="text-info">W</a></p>
+    </div>
+
+    <script>
+        // JavaScript logic to handle inputs and outputs
+        function findProduct() {
+            // 1. Get the value from the input field
+            let budget = document.getElementById("budgetInput").value;
+            let brandText = document.getElementById("brandOutput");
+            let locationText = document.getElementById("locationOutput");
+
+            // 2. Logic: Conditional statements (if/else)
+            if (budget === "" || budget <= 0) {
+            alert("Please enter a valid budget.");
+        } else if (budget >= 7000) {
+            brandText.innerHTML = "Premium Leather Briefcases & Designer Totes";
+            locationText.innerHTML = "Greenbelt 5, Makati / Central Square BGC";
+        } else if (budget >= 3000) {
+            brandText.innerHTML = "Technical Backpacks & Commuter Bags";
+            locationText.innerHTML = "SM Megamall / Glorietta";
+        } else {
+            brandText.innerHTML = "Daily Canvas Totes & Eco-friendly Bags";
+            locationText.innerHTML = "Common Room / Local Pop-up Stores";
+        }
+
+            // JavaScript comment: This function updates the HTML based on budget tiers
+            console.log("Search executed for budget: " + budget);
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+</body>
+</html>

@@ -112,32 +112,38 @@
         <p class="mt-4">Data sourced from: <a href="https://www.w3schools.com" target="_blank" class="text-info">W</a></p>
     </div>
 
-    <script>
-        // JavaScript logic to handle inputs and outputs
-        function findProduct() {
-            // 1. Get the value from the input field
-            let budget = document.getElementById("budgetInput").value;
-            let brandText = document.getElementById("brandOutput");
-            let locationText = document.getElementById("locationOutput");
+<script>
+    function findProduct() {
+        // 1. Get the value from the input field
+        let budgetInput = document.getElementById("budgetInput").value;
+        let brandText = document.getElementById("brandOutput");
+        let locationText = document.getElementById("locationOutput");
 
-            // 2. Logic: Conditional statements (if/else)
-            if (budget === "" || budget <= 0) {
+        // Convert input to a number
+        let budget = Number(budgetInput);
+
+        // --- DISCOUNT LOGIC (No "if" used here) ---
+        // We multiply by 0.95 to automatically get the price after a 5% discount
+        let discountedBudget = budget * 0.95; 
+        // ------------------------------------------
+
+        // 2. Logic: Conditional statements for Tiers
+        if (budget === "" || budget <= 0) {
             alert("Please enter a valid budget.");
-        } else if (budget >= 7000) {
-            brandText.innerHTML = "Premium Leather Briefcases & Designer Totes";
+        } else if (discountedBudget >= 7000) {
+            brandText.innerHTML = "Premium Leather Briefcases & Designer Totes (Discount Applied!)";
             locationText.innerHTML = "Greenbelt 5, Makati / Central Square BGC";
-        } else if (budget >= 3000) {
-            brandText.innerHTML = "Technical Backpacks & Commuter Bags";
+        } else if (discountedBudget >= 3000) {
+            brandText.innerHTML = "Technical Backpacks & Commuter Bags (Discount Applied!)";
             locationText.innerHTML = "SM Megamall / Glorietta";
         } else {
-            brandText.innerHTML = "Daily Canvas Totes & Eco-friendly Bags";
+            brandText.innerHTML = "Daily Canvas Totes & Eco-friendly Bags (Discount Applied!)";
             locationText.innerHTML = "Common Room / Local Pop-up Stores";
         }
 
-            // JavaScript comment: This function updates the HTML based on budget tiers
-            console.log("Search executed for budget: " + budget);
-        }
-    </script>
+        console.log("Original: " + budget + " | Discounted: " + discountedBudget.toFixed(2));
+    }
+</script>
 
 </body>
 </html>
@@ -147,3 +153,4 @@
 
 </body>
 </html>
+
